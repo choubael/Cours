@@ -1,16 +1,13 @@
-import { View } from 'react-native'
 import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import { Box, Center, HStack, Heading, ScrollView, Text, useColorMode } from 'native-base'
-import { COLOR_THEME, DARK, WHITE, ligne, space, theme_ct_white, theme_white_dark } from '../../assets/Data/Couleurs&Cte'
-import { Ionicons } from '@expo/vector-icons'
-import Exam_title from '../../components/Elements/Exam_title'
-import Exo from '../../components/Elements/Exo'
-import Question from '../../components/Elements/Question'
+import { ScrollView, Text, useColorMode } from 'native-base'
+import { COLOR_THEME, DARK, WHITE, ligne, space} from '../../assets/Data/Couleurs&Cte'
+import Exo from '../Elements/Exo'
+import Exam_title from '../Elements/Exam_title'
+import Question from '../Elements/Question'
 
 const S_2018_2019 = () => {
     const theme_white_dark = useColorMode().colorMode === 'light' ? WHITE : DARK;
-    const theme_ct_white = useColorMode().colorMode === 'light' ? COLOR_THEME : WHITE;
   return (
     <SafeAreaView style={{flex:1,backgroundColor:theme_white_dark,paddingHorizontal:10}}>
         <ScrollView flex={1}>
@@ -177,47 +174,7 @@ const S_2018_2019 = () => {
 
             </Text>}
             />
-            <Exo num={3} pts={10}/>
-            <Question
-            num={1}
-            question={<Text>
-                Écrire un programme C qui lit trois entiers a, b et c puis qui recherche dans l'intervalle [1 ..min (a, b, c)] le plus grand diviseur commun à ces trois entiers. Votre programme doit être clair et bien structuré.
-            </Text>}
-            reponse={<Text>
-                {"#include <stdio.h>"}
-
-                // Fonction pour calculer le PGCD {"(Plus Grand Diviseur Commun)"}
-                {"int pgcd(int x, int y) {"}
-                    {"while (y != 0) {"}
-                        int temp = y;
-                        y = x % y;
-                        x = temp;
-                   {" }"}
-                    return x;
-                {"}"}
-
-                {"int main() {"}
-                    // Déclaration des variables
-                    {"int a, b, c;"}
-
-                    // Lecture des trois entiers
-                    printf{"("}"Entrez trois entiers a, b et c : "{")"};
-                    scanf{"("}"%d %d %d", &a, &b, &c{")"};
-
-                    // Calcul du PGCD des deux premiers entiers
-                    int gcd_ab = pgcd{"("}a, b{")"};
-
-                    // Calcul du PGCD des trois entiers
-                    int gcd_abc = pgcd{"("}gcd_ab, c{")"};
-
-                    // Affichage du résultat
-                    printf{"("}"Le plus grand diviseur commun à %d, %d et %d est : %d\n", a, b, c, gcd_abc{")"};
-
-                    return 0;
-                {"}"}
-
-            </Text>}
-            />
+            
         </ScrollView>
     </SafeAreaView>
   )

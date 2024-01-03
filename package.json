@@ -17,6 +17,8 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "@expo/webpack-config": "^19.0.0",
+    "accordion-collapse-react-native": "^1.1.1",
     "expo": "^49.0.21",
     "expo-status-bar": "~1.6.0",
     "native-base": "3.4.0",

@@ -25,5 +25,3 @@ export const space = "    ";
 export const MAJnom = "une erreur est survenue lors de l'edition de votre nom d'utilisateur, Veuillez reéssayer!";
 export const MAJimg = "une erreur est survenue lors de l'edition de votre photo de profil, Veuillez reéssayer!";
 
-import { View, Text } from 'react-native'
-import React from 'react'
